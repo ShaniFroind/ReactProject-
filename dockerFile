@@ -1,21 +1,3 @@
-# FROM node:16-alpine
-
-# WORKDIR /app
-
-# COPY package.json ./
-# COPY package-lock.json ./
-
-# RUN npm install --save
-
-# COPY . .
-
-# COPY entry-point.sh .
-
-# RUN ["chmod", "+x", "entry-point.sh"]
-# # CMD ["npm", "start"]
-
-# ENTRYPOINT ["entry-point.sh"]
-# #
 FROM node:18-alpine
 
 WORKDIR /app
@@ -28,8 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-COPY entry-point.sh .
-
-RUN ["chmod", "+x", "entry-point.sh"]
-
-CMD ["./entry-point.sh"]
+CMD ["npm", "start"]
