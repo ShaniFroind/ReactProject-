@@ -38,7 +38,9 @@ const UserList: FC<UserListProps> = () => {
         console.error('Error fetching users:', error);
       });
   }, []);
-
+  const newSum = () => {
+    return usersList.sum()
+  }
   const searchValue = () => {
     if (searchValueRef.current) {
       let inputValue = searchValueRef.current.value;
